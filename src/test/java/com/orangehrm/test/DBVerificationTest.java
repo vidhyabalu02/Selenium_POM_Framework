@@ -39,6 +39,7 @@ class DBVerificationTest extends BaseClass{
 		
 		ExtentManager.logStep("Search for Employee ");
 		homePage.employeeSearch(empname);
+		staticWait(1);
 	
 		ExtentManager.logStep("Get the employee Name from DB ");
 		String employee_id = employeeid;

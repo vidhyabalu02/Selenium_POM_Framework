@@ -86,14 +86,16 @@ public class BaseClass {
 			//Creating chrome options
 			
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless"); //This runs chrome in headless mode
+			//options.addArguments("--headless"); //This runs chrome in headless mode
 			options.addArguments("--disable-gpu"); //This disable GPu for headless mode
 			//options.addArguments("--window-size=1920,1080"); //this sets the window size
 			options.addArguments("--disable-notifications"); //disable browser notification
 			options.addArguments("--no-sandbox"); //required for some CI environments
 			options.addArguments("--disable-dev-shm-usage"); //ResolveF issues in resources
+			options.addArguments("--ignore-ssl-errors=yes");
+			options.addArguments("--ignore-certificate-errors");
 			
-			driver.set(new ChromeDriver()); // New change for threadlocal
+			driver.set(new ChromeDriver(options)); // New change for threadlocal
 			ExtentManager.registerWebDriver(getDriver());
 			logger.info("ChromeDriver Instance is created ");
 		} else if (browser.equalsIgnoreCase("edge")) {
@@ -106,7 +108,7 @@ public class BaseClass {
 			options.addArguments("--no-sandbox"); //required for some CI environments
 			options.addArguments("--disable-dev-shm-usage"); //ResolveF issues in resources
 			// driver = new EdgeDriver();
-			driver.set(new EdgeDriver());
+			driver.set(new EdgeDriver(options));
 			ExtentManager.registerWebDriver(getDriver());
 			logger.info("EdgeDriver Instance is created ");
 		} else if (browser.equalsIgnoreCase("firefox")) {
@@ -121,7 +123,7 @@ public class BaseClass {
 			options.addArguments("--no-sandbox"); //required for some CI environments
 			options.addArguments("--disable-dev-shm-usage"); //ResolveF issues in resources
 			// driver = new FirefoxDriver();
-			driver.set(new FirefoxDriver());
+			driver.set(new FirefoxDriver(options));
 			ExtentManager.registerWebDriver(getDriver());
 			logger.info("FirefoxDriver Instance is created ");
 		} else {
