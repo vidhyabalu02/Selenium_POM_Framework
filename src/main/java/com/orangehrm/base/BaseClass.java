@@ -92,8 +92,8 @@ public class BaseClass {
 			options.addArguments("--disable-notifications"); //disable browser notification
 			options.addArguments("--no-sandbox"); //required for some CI environments
 			options.addArguments("--disable-dev-shm-usage"); //ResolveF issues in resources
-			options.addArguments("--ignore-ssl-errors=yes");
-			options.addArguments("--ignore-certificate-errors");
+			//options.addArguments("--ignore-ssl-errors=yes");
+			//options.addArguments("--ignore-certificate-errors");
 			
 			driver.set(new ChromeDriver(options)); // New change for threadlocal
 			ExtentManager.registerWebDriver(getDriver());
