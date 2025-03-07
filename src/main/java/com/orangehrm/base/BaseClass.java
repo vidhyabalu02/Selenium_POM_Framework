@@ -86,9 +86,9 @@ public class BaseClass {
 			//Creating chrome options
 			
 			ChromeOptions options = new ChromeOptions();
-			//options.addArguments("--headless"); //This runs chrome in headless mode
+			options.addArguments("--headless"); //This runs chrome in headless mode
 			options.addArguments("--disable-gpu"); //This disable GPu for headless mode
-			//options.addArguments("--window-size=1920,1080"); //this sets the window size
+			options.addArguments("--window-size=1920,1080"); //this sets the window size
 			options.addArguments("--disable-notifications"); //disable browser notification
 			options.addArguments("--no-sandbox"); //required for some CI environments
 			options.addArguments("--disable-dev-shm-usage"); //ResolveF issues in resources
