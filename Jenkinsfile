@@ -38,7 +38,8 @@ pipeline {
 			emailext (
 				to: 'vidhyabaluviba@gmail.com' ,
 				subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}" ,
-				ODY: """
+				subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}"
+				body: """
 				<html>
 				<body> 
 				<p> Hello Team, </p>
@@ -68,8 +69,8 @@ pipeline {
 		failure {
 			emailext (
 				to: 'vidhyabaluviba@gmail.com' ,
-				subject: "Build Failed: $(env.JOB_NAME) #$(env.BUILD_NUMBER)" ,
-				ODY: """
+				subject: subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+				body: """
 				<html>
 				<body> 
 				<p> Hello Team, </p>
