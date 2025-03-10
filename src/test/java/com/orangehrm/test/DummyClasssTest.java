@@ -9,6 +9,7 @@ import com.orangehrm.utilities.ExtentManager;
 public class DummyClasssTest extends BaseClass {
 	@Test
 	public void dummyTest() {
+		//Checking the test 
 		// ExtentManager.startTest("Dummy Test 1"); --> Commenting because This has been
 		// implemented in Test Listener
 		String title = getDriver().getTitle();
