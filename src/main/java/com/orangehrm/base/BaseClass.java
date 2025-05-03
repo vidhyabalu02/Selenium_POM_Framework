@@ -29,6 +29,7 @@ public class BaseClass {
 	protected static Properties property;
 	// protected static WebDriver driver;
 	// private static ActionDriver actionDriver;
+	//Adding this comment in  my base class 
 
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	private static ThreadLocal<ActionDriver> actionDriver = new ThreadLocal<>();
