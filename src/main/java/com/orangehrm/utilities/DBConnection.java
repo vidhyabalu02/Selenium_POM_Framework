@@ -23,6 +23,7 @@ public class DBConnection {
 		try {
 			logger.info("Starting DB Connection");
 					
+			
 			Connection conn = DriverManager.getConnection(DB_URL,DB_USERNAME,DB_PASSWORD);
 			logger.info("DB Connection Successfull");
 			return conn;
